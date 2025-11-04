@@ -1,0 +1,204 @@
+[gd_scene load_steps=7 format=3 uid="uid://cf6rph7p0k8y7"]
+
+[ext_resource type="Theme" uid="uid://c5ct36yck13hr" path="res://resources/knight_theme.tres" id="1_n0k8k"]
+[ext_resource type="PackedScene" uid="uid://mqdvfqgo4wwf" path="res://scenes/ui/common/nine_patch_rect.tscn" id="2_6jlxp"]
+[ext_resource type="Script" uid="uid://dpt83vd4yrvna" path="res://scripts/ui/overlays/HeadsUpDisplay.cs" id="2_r0aol"]
+[ext_resource type="PackedScene" uid="uid://yyvuxydbepux" path="res://scenes/ui/common/health_bar.tscn" id="3_n0k8k"]
+[ext_resource type="PackedScene" uid="uid://df6ouxjtq5fcc" path="res://scenes/ui/common/slot.tscn" id="4_qqe2g"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_r0aol"]
+resource_name = "answer_button_group"
+
+[node name="HeadsUpDisplay" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_n0k8k")
+script = ExtResource("2_r0aol")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Top" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+mouse_filter = 2
+
+[node name="PlayerHealthBar" parent="VBoxContainer/Top" instance=ExtResource("3_n0k8k")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="EnemyHealthBar" parent="VBoxContainer/Top" instance=ExtResource("3_n0k8k")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Separator" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+mouse_filter = 2
+
+[node name="PlayerAnchor" type="Control" parent="VBoxContainer/Separator"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+
+[node name="PlayerPosition" type="Marker2D" parent="VBoxContainer/Separator/PlayerAnchor"]
+unique_name_in_owner = true
+position = Vector2(81, 75)
+
+[node name="EnemyAnchor" type="Control" parent="VBoxContainer/Separator"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="EnemyPosition" type="Marker2D" parent="VBoxContainer/Separator/EnemyAnchor"]
+unique_name_in_owner = true
+position = Vector2(-97, 75)
+
+[node name="Bottom" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="NinePatchRect" parent="VBoxContainer/Bottom" instance=ExtResource("2_6jlxp")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Bottom/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Bottom/NinePatchRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="VBoxContainer/Bottom/NinePatchRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/Bottom/NinePatchRect/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ItemContainer" type="GridContainer" parent="VBoxContainer/Bottom/NinePatchRect/MarginContainer/HBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 3
+
+[node name="Slot" parent="VBoxContainer/Bottom/NinePatchRect/MarginContainer/HBoxContainer/ScrollContainer/ItemContainer" instance=ExtResource("4_qqe2g")]
+layout_mode = 2
+
+[node name="Slot2" parent="VBoxContainer/Bottom/NinePatchRect/MarginContainer/HBoxContainer/ScrollContainer/ItemContainer" instance=ExtResource("4_qqe2g")]
+layout_mode = 2
+
+[node name="Slot3" parent="VBoxContainer/Bottom/NinePatchRect/MarginContainer/HBoxContainer/ScrollContainer/ItemContainer" instance=ExtResource("4_qqe2g")]
+layout_mode = 2
+
+[node name="Slot4" parent="VBoxContainer/Bottom/NinePatchRect/MarginContainer/HBoxContainer/ScrollContainer/ItemContainer" instance=ExtResource("4_qqe2g")]
+layout_mode = 2
+
+[node name="Slot5" parent="VBoxContainer/Bottom/NinePatchRect/MarginContainer/HBoxContainer/ScrollContainer/ItemContainer" instance=ExtResource("4_qqe2g")]
+layout_mode = 2
+
+[node name="Slot6" parent="VBoxContainer/Bottom/NinePatchRect/MarginContainer/HBoxContainer/ScrollContainer/ItemContainer" instance=ExtResource("4_qqe2g")]
+layout_mode = 2
+
+[node name="Slot7" parent="VBoxContainer/Bottom/NinePatchRect/MarginContainer/HBoxContainer/ScrollContainer/ItemContainer" instance=ExtResource("4_qqe2g")]
+layout_mode = 2
+
+[node name="Slot8" parent="VBoxContainer/Bottom/NinePatchRect/MarginContainer/HBoxContainer/ScrollContainer/ItemContainer" instance=ExtResource("4_qqe2g")]
+layout_mode = 2
+
+[node name="Slot9" parent="VBoxContainer/Bottom/NinePatchRect/MarginContainer/HBoxContainer/ScrollContainer/ItemContainer" instance=ExtResource("4_qqe2g")]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/Bottom/NinePatchRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NinePatchRect2" parent="VBoxContainer/Bottom" instance=ExtResource("2_6jlxp")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/Bottom/NinePatchRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Bottom/NinePatchRect2/MarginContainer2"]
+layout_mode = 2
+
+[node name="QuestionLabel" type="RichTextLabel" parent="VBoxContainer/Bottom/NinePatchRect2/MarginContainer2/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Question"
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/Bottom/NinePatchRect2/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="FirstAnswerButton" type="Button" parent="VBoxContainer/Bottom/NinePatchRect2/MarginContainer2/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_r0aol")
+text = "Answer 1"
+metadata/answer_index = 0
+
+[node name="SecondAnswerButton" type="Button" parent="VBoxContainer/Bottom/NinePatchRect2/MarginContainer2/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_r0aol")
+text = "Answer 2"
+metadata/answer_index = 1
+
+[node name="ThirdAnswerButton" type="Button" parent="VBoxContainer/Bottom/NinePatchRect2/MarginContainer2/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_r0aol")
+text = "Answer 3"
+metadata/answer_index = 2
+
+[node name="FourthAnswerButton" type="Button" parent="VBoxContainer/Bottom/NinePatchRect2/MarginContainer2/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+button_group = SubResource("ButtonGroup_r0aol")
+text = "Answer 4"
+metadata/answer_index = 3

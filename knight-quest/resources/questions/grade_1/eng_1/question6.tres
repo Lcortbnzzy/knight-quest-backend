@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://dqxsuh3iwwju1"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = " What is the middle letter of the word \"cow\"\""
+Answers = PackedStringArray("O", "A", "C", "W")
+CorrectAnswer = "O"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

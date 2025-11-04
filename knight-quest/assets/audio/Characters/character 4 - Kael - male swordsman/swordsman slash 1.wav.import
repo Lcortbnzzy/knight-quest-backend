@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dyqeqblv0qqyt"
+path="res://.godot/imported/swordsman slash 1.wav-648d344a7a6e6f5402fcc167c97ddf2a.sample"
+
+[deps]
+
+source_file="res://assets/audio/Characters/character 4 - Kael - male swordsman/swordsman slash 1.wav"
+dest_files=["res://.godot/imported/swordsman slash 1.wav-648d344a7a6e6f5402fcc167c97ddf2a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

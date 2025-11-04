@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://b0nnsgc6v1bd6"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What is the correct contraction for \"Do not\""
+Answers = PackedStringArray("Don\'t", "Doesn\'t", "Didn\'t", "Dont")
+CorrectAnswer = "Don't"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

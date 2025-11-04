@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://oq20iuooqx3y"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What is the plural of \"mouse\""
+Answers = PackedStringArray("Mouses", "Mices", "Mice", "Mouse")
+CorrectAnswerIndex = 2
+CorrectAnswer = "Mice"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade3_Math_1"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What is 45 + 38?"
+Answers = PackedStringArray("83", "82", "84", "85")
+CorrectAnswerIndex = 0
+CorrectAnswer = "83"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxwurtsbmn268"]
+
+[ext_resource type="Script" uid="uid://cp0d7fahw0fkr" path="res://scripts/ui/common/Projectile.cs" id="1_a5gof"]
+[ext_resource type="Texture2D" uid="uid://dpfwnep6cwtiq" path="res://assets/art/entities/characters/reaper/reaper.png" id="2_j6vwg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fcc6"]
+atlas = ExtResource("2_j6vwg")
+region = Rect2(0, 512, 109, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5gof"]
+atlas = ExtResource("2_j6vwg")
+region = Rect2(109, 512, 109, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j6vwg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fcc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5gof")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[node name="Projectile" type="Node2D"]
+script = ExtResource("1_a5gof")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j6vwg")
+animation = &"shoot"

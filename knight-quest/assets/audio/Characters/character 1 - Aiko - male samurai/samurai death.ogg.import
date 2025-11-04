@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://doxvg4paxkgkj"
+path="res://.godot/imported/samurai death.ogg-330e4730976acbda35c63df38f5991c5.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Characters/character 1 - Aiko - male samurai/samurai death.ogg"
+dest_files=["res://.godot/imported/samurai death.ogg-330e4730976acbda35c63df38f5991c5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

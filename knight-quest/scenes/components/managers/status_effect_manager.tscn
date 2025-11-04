@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdhw2ftqghgg2"]
+
+[ext_resource type="Script" uid="uid://hvsxmxkhplj4" path="res://scripts/components/managers/StatusEffectManager.cs" id="1_hba1d"]
+
+[node name="StatusEffectManager" type="Node"]
+script = ExtResource("1_hba1d")

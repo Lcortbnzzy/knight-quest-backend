@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://b06g06ggv8qui"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_wrme7"]
+
+[resource]
+script = ExtResource("1_wrme7")
+QuestionText = "If you have 28 apples and eat 7, how many are left?"
+Answers = PackedStringArray("19", "23", "32", "21")
+CorrectAnswerIndex = 3
+CorrectAnswer = "21"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade6_Math_22"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "If a rectangle's length is 10 cm and width is 5 cm, what is its diagonal length? (Use Pythagoras theorem)"
+Answers = PackedStringArray("12 cm", "13 cm", "14 cm", "15 cm")
+CorrectAnswerIndex = 0
+CorrectAnswer = "12 cm"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

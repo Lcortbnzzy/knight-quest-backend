@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade6_Math_10"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What is the area of a circle with radius 7 cm? (Use $\pi$ = 3.14)"
+Answers = PackedStringArray("153.86 cm²", "154 cm²", "146 cm²", "160 cm²")
+CorrectAnswerIndex = 0
+CorrectAnswer = "153.86 cm²"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

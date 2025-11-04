@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://wf6ly1dr6pgr"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "Which letter is a vowel?"
+Answers = PackedStringArray("B", "C", "A", "D")
+CorrectAnswerIndex = 2
+CorrectAnswer = "A"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

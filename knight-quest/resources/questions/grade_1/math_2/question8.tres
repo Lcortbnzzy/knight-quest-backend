@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade1_Math_8"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What time is it if the clock shows 12:00?"
+Answers = PackedStringArray("Midnight or Noon", "Morning", "Evening", "Afternoon")
+CorrectAnswerIndex = 0
+CorrectAnswer = "Midnight or Noon"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

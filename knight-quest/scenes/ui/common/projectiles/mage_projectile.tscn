@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://c3okeady5lif0"]
+
+[ext_resource type="Script" uid="uid://cp0d7fahw0fkr" path="res://scripts/ui/common/Projectile.cs" id="1_15wb0"]
+[ext_resource type="Texture2D" uid="uid://nj6gscpsfn2p" path="res://assets/art/entities/characters/mage/mage.png" id="2_eftlm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25icc"]
+atlas = ExtResource("2_eftlm")
+region = Rect2(512, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15wb0"]
+atlas = ExtResource("2_eftlm")
+region = Rect2(640, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eftlm"]
+atlas = ExtResource("2_eftlm")
+region = Rect2(0, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifcn4"]
+atlas = ExtResource("2_eftlm")
+region = Rect2(128, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_df8n8"]
+atlas = ExtResource("2_eftlm")
+region = Rect2(256, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4s8y"]
+atlas = ExtResource("2_eftlm")
+region = Rect2(384, 640, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wthsx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25icc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15wb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eftlm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifcn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_df8n8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4s8y")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[node name="Projectile" type="Node2D"]
+script = ExtResource("1_15wb0")
+Speed = 500.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wthsx")
+animation = &"shoot"

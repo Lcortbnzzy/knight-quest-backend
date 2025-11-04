@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="LevelInfo" load_steps=14 format=3 uid="uid://btqut1lxadlyp"]
+
+[ext_resource type="PackedScene" uid="uid://8080s6xfdm22" path="res://scenes/entities/enemies/number_naga.tscn" id="1_03k3c"]
+[ext_resource type="Script" uid="uid://bacok55bipbse" path="res://scripts/data/level/LevelInfo.cs" id="1_kbcla"]
+[ext_resource type="Script" uid="uid://cb136e6c67ahm" path="res://scripts/data/level/Encounter.cs" id="2_ywxc6"]
+[ext_resource type="Script" uid="uid://cqe31o4yik31k" path="res://scripts/data/level/CombatSequence.cs" id="3_1jxkj"]
+[ext_resource type="Resource" path="res://resources/questions/grade_4/math_3/question1.tres" id="4_syoes"]
+[ext_resource type="Resource" path="res://resources/questions/grade_4/math_3/question2.tres" id="5_c1x1k"]
+[ext_resource type="Resource" path="res://resources/questions/grade_4/math_3/question3.tres" id="6_cpl0w"]
+[ext_resource type="Resource" path="res://resources/questions/grade_4/math_3/question4.tres" id="7_y05rv"]
+[ext_resource type="Resource" path="res://resources/questions/grade_4/math_3/question5.tres" id="8_jkmf0"]
+[ext_resource type="Resource" path="res://resources/questions/grade_4/math_3/question6.tres" id="9_0adfw"]
+[ext_resource type="Resource" path="res://resources/questions/grade_4/math_3/question7.tres" id="10_uxkry"]
+
+[sub_resource type="Resource" id="Resource_gtncp"]
+script = ExtResource("2_ywxc6")
+Enemies = [ExtResource("1_03k3c")]
+metadata/_custom_type_script = "uid://cb136e6c67ahm"
+
+[sub_resource type="Resource" id="Resource_ahwki"]
+script = ExtResource("3_1jxkj")
+Encounters = [SubResource("Resource_gtncp")]
+metadata/_custom_type_script = "uid://cqe31o4yik31k"
+
+[resource]
+script = ExtResource("1_kbcla")
+LevelName = "Math World 4 – Stage 3"
+Subject = 1
+Grade = 3
+CombatSequence = SubResource("Resource_ahwki")
+StarCount = 10
+Questions = Array[Object]([ExtResource("4_syoes"), ExtResource("5_c1x1k"), ExtResource("6_cpl0w"), ExtResource("7_y05rv"), ExtResource("8_jkmf0"), ExtResource("9_0adfw"), ExtResource("10_uxkry")])
+metadata/_custom_type_script = "uid://bacok55bipbse"

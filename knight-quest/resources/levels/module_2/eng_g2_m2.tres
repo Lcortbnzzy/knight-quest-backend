@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="LevelInfo" load_steps=37 format=3 uid="uid://0a38gq73k0gv"]
+
+[ext_resource type="PackedScene" uid="uid://pgk7i76mo1f3" path="res://scenes/entities/enemies/golem.tscn" id="1_bqxcu"]
+[ext_resource type="Script" uid="uid://bacok55bipbse" path="res://scripts/data/level/LevelInfo.cs" id="1_dbffr"]
+[ext_resource type="Script" uid="uid://cb136e6c67ahm" path="res://scripts/data/level/Encounter.cs" id="2_py2ej"]
+[ext_resource type="Script" uid="uid://cqe31o4yik31k" path="res://scripts/data/level/CombatSequence.cs" id="3_x8epq"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/eng_2/question1.tres" id="4_2iw67"]
+[ext_resource type="Resource" uid="uid://c246xixrxyi5h" path="res://resources/questions/grade_2/eng_2/question2.tres" id="5_oj032"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/eng_2/question3.tres" id="6_0xr2j"]
+[ext_resource type="Resource" uid="uid://b0a0y6o0l372u" path="res://resources/questions/grade_2/eng_2/question4.tres" id="7_4eq38"]
+[ext_resource type="Resource" uid="uid://bk12rk2n7w2js" path="res://resources/questions/grade_2/eng_2/question5.tres" id="8_3rj64"]
+[ext_resource type="Resource" uid="uid://d7p8g0io2tix" path="res://resources/questions/grade_2/eng_2/question6.tres" id="9_p2w3k"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/eng_2/question7.tres" id="10_r5wjt"]
+[ext_resource type="Resource" uid="uid://brtvgttcneox1" path="res://resources/questions/grade_2/eng_2/question8.tres" id="11_bl1ad"]
+[ext_resource type="Resource" uid="uid://bv5skpkkoilmu" path="res://resources/questions/grade_2/eng_2/question9.tres" id="12_cm3mx"]
+[ext_resource type="Resource" uid="uid://y0lofukbg37e" path="res://resources/questions/grade_2/eng_2/question10.tres" id="13_gbjcn"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/eng_2/question11.tres" id="14_w47a5"]
+[ext_resource type="Resource" uid="uid://b011epeqhbrfq" path="res://resources/questions/grade_2/eng_2/question12.tres" id="15_h06mq"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/eng_2/question13.tres" id="16_hwqh5"]
+[ext_resource type="Resource" uid="uid://cvlunbtkrph2i" path="res://resources/questions/grade_2/eng_2/question14.tres" id="17_4o1ol"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/eng_2/question15.tres" id="18_qgtvk"]
+[ext_resource type="Resource" uid="uid://v5miu4pfn57n" path="res://resources/questions/grade_2/eng_2/question16.tres" id="19_i4hrr"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/eng_2/question17.tres" id="20_nu0x6"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/eng_2/question18.tres" id="21_2q2wj"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/eng_2/question19.tres" id="22_ps7at"]
+[ext_resource type="Resource" uid="uid://c5yjuj1dig154" path="res://resources/questions/grade_2/eng_2/question20.tres" id="23_k1xrn"]
+[ext_resource type="Resource" uid="uid://c8khypwhtnl2t" path="res://resources/questions/grade_2/eng_2/question21.tres" id="24_0hcmm"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/eng_2/question22.tres" id="25_suago"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/eng_2/question23.tres" id="26_7bkd7"]
+[ext_resource type="Resource" uid="uid://dos0lb3hpaqb0" path="res://resources/questions/grade_2/eng_2/question24.tres" id="27_h4hf3"]
+[ext_resource type="Resource" uid="uid://htg7atnnpd3e" path="res://resources/questions/grade_2/eng_2/question25.tres" id="28_5pugk"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/eng_2/question26.tres" id="29_irxx4"]
+[ext_resource type="Resource" uid="uid://cucquxh76ad5" path="res://resources/questions/grade_2/eng_2/question27.tres" id="30_803hv"]
+[ext_resource type="Resource" uid="uid://bs106h8r5nic4" path="res://resources/questions/grade_2/eng_2/question28.tres" id="31_h3e34"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/eng_2/question29.tres" id="32_b5xfg"]
+[ext_resource type="Resource" uid="uid://dah4no0vp2qsc" path="res://resources/questions/grade_2/eng_2/question30.tres" id="33_kpgtn"]
+
+[sub_resource type="Resource" id="Resource_vhw2x"]
+script = ExtResource("2_py2ej")
+Enemies = [ExtResource("1_bqxcu")]
+metadata/_custom_type_script = "uid://cb136e6c67ahm"
+
+[sub_resource type="Resource" id="Resource_fujhw"]
+script = ExtResource("3_x8epq")
+Encounters = [SubResource("Resource_vhw2x")]
+metadata/_custom_type_script = "uid://cqe31o4yik31k"
+
+[resource]
+script = ExtResource("1_dbffr")
+LevelName = "English World 2 – Stage 2"
+Grade = 1
+CombatSequence = SubResource("Resource_fujhw")
+StarCount = 25
+Questions = Array[Object]([ExtResource("4_2iw67"), ExtResource("5_oj032"), ExtResource("6_0xr2j"), ExtResource("7_4eq38"), ExtResource("8_3rj64"), ExtResource("9_p2w3k"), ExtResource("10_r5wjt"), ExtResource("11_bl1ad"), ExtResource("12_cm3mx"), ExtResource("13_gbjcn"), ExtResource("14_w47a5"), ExtResource("15_h06mq"), ExtResource("16_hwqh5"), ExtResource("17_4o1ol"), ExtResource("18_qgtvk"), ExtResource("19_i4hrr"), ExtResource("20_nu0x6"), ExtResource("21_2q2wj"), ExtResource("22_ps7at"), ExtResource("23_k1xrn"), ExtResource("24_0hcmm"), ExtResource("25_suago"), ExtResource("26_7bkd7"), ExtResource("27_h4hf3"), ExtResource("28_5pugk"), ExtResource("29_irxx4"), ExtResource("30_803hv"), ExtResource("31_h3e34"), ExtResource("32_b5xfg"), ExtResource("33_kpgtn")])
+metadata/_custom_type_script = "uid://bacok55bipbse"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ctj7ubntu3ux1"
+path="res://.godot/imported/samurai damage.ogg-5bd8c4e59a582fbabd9652fe5c4cbec5.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/Characters/character 1 - Aiko - male samurai/samurai damage.ogg"
+dest_files=["res://.godot/imported/samurai damage.ogg-5bd8c4e59a582fbabd9652fe5c4cbec5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

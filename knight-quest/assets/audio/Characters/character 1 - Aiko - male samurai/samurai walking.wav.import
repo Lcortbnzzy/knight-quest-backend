@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bu618b0ox51av"
+path="res://.godot/imported/samurai walking.wav-1f25c0f2bcca418e906d6f44c865c676.sample"
+
+[deps]
+
+source_file="res://assets/audio/Characters/character 1 - Aiko - male samurai/samurai walking.wav"
+dest_files=["res://.godot/imported/samurai walking.wav-1f25c0f2bcca418e906d6f44c865c676.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

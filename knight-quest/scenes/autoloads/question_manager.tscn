@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbw6djrw7xne1"]
+
+[ext_resource type="Script" uid="uid://5nk35qbmfi8b" path="res://scripts/autoloads/QuestionManager.cs" id="1_bl3f4"]
+
+[node name="QuestionManager" type="Node"]
+script = ExtResource("1_bl3f4")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade1_Math_1"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What number comes after 5?"
+Answers = PackedStringArray("3", "6", "4", "7")
+CorrectAnswerIndex = 1
+CorrectAnswer = "6"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

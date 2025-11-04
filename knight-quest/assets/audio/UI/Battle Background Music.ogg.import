@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dsuktoao7jkol"
+path="res://.godot/imported/Battle Background Music.ogg-e93b131f2454f7d33d322704cd83d59f.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/UI/Battle Background Music.ogg"
+dest_files=["res://.godot/imported/Battle Background Music.ogg-e93b131f2454f7d33d322704cd83d59f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

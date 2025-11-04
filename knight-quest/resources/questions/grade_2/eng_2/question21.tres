@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://c8khypwhtnl2t"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What is the opposite of fast"
+Answers = PackedStringArray("Slow", "Tall", "Big", "Hot")
+CorrectAnswer = "Slow"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

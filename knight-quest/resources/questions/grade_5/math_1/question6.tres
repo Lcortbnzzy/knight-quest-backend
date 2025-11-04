@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade5_Math_6"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "Subtract 56,789 - 34,210."
+Answers = PackedStringArray("22,579", "21,579", "22,689", "21,689")
+CorrectAnswerIndex = 0
+CorrectAnswer = "22,579"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

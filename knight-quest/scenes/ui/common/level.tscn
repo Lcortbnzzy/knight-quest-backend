@@ -1,0 +1,100 @@
+[gd_scene load_steps=16 format=3 uid="uid://dc8s677y6qtgv"]
+
+[ext_resource type="Script" uid="uid://bx1rnd5riutkm" path="res://scripts/ui/common/Level.cs" id="1_hr3dh"]
+[ext_resource type="PackedScene" uid="uid://mqdvfqgo4wwf" path="res://scenes/ui/common/nine_patch_rect.tscn" id="1_t84un"]
+[ext_resource type="Texture2D" uid="uid://b1tdr1mttpf8f" path="res://assets/art/icons/star icon.png" id="3_8ocpf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rav45"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tmny7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bnjlr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g6ebs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qgh6q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ahnr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7o511"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_osa2b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ocpf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hr3dh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t84un"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osa2b"]
+atlas = ExtResource("3_8ocpf")
+
+[node name="Level" type="Button"]
+custom_minimum_size = Vector2(120, 80)
+offset_right = 120.0
+offset_bottom = 80.0
+pivot_offset = Vector2(75, 50)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rav45")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_tmny7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bnjlr")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_g6ebs")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qgh6q")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_5ahnr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7o511")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_osa2b")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8ocpf")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_hr3dh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t84un")
+script = ExtResource("1_hr3dh")
+
+[node name="NinePatchRect" parent="." instance=ExtResource("1_t84un")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+region_rect = Rect2(49, 2, 46, 45)
+patch_margin_top = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer"]
+layout_mode = 2
+
+[node name="LevelLabel" type="RichTextLabel" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Math World 6 – Stage 1"
+fit_content = true
+scroll_active = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_direction = 4
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+size_flags_stretch_ratio = 0.0
+texture = SubResource("AtlasTexture_osa2b")
+expand_mode = 1
+
+[node name="StarLabel" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "99"

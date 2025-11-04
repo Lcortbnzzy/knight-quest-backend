@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade4_Math_9"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What is the perimeter of a rectangle with length 9 cm and width 4 cm?"
+Answers = PackedStringArray("36 cm", "26 cm", "30 cm", "18 cm")
+CorrectAnswerIndex = 1
+CorrectAnswer = "26 cm"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmhfpn5sxmcnq"]
+
+[ext_resource type="Script" uid="uid://dw7gq0uqax10p" path="res://scripts/ui/overlays/GetCert.cs" id="1_klmbq"]
+[ext_resource type="PackedScene" uid="uid://mqdvfqgo4wwf" path="res://scenes/ui/common/nine_patch_rect.tscn" id="1_rgq67"]
+[ext_resource type="Theme" uid="uid://c5ct36yck13hr" path="res://resources/knight_theme.tres" id="2_lfkwl"]
+[ext_resource type="FontFile" uid="uid://bc6yuiu0olsxs" path="res://assets/art/fonts/m6x11.ttf" id="3_klmbq"]
+
+[node name="GetCert" type="CanvasLayer"]
+script = ExtResource("1_klmbq")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" parent="CenterContainer" instance=ExtResource("1_rgq67")]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 2
+
+[node name="GetCertBtn" type="Button" parent="CenterContainer/NinePatchRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -20.0
+offset_right = 100.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("2_lfkwl")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_klmbq")
+text = "GET CERTIFICATE"

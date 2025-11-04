@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cixwq4fhyt87h"]
+
+[ext_resource type="Script" uid="uid://4clr7ad05rbe" path="res://scripts/autoloads/AudioManager.cs" id="1_enqet"]
+[ext_resource type="AudioStream" uid="uid://cgj22kpv1277t" path="res://assets/audio/UI/UI button.ogg" id="1_f8yfr"]
+[ext_resource type="AudioStream" uid="uid://cpx6kvyh236lh" path="res://assets/audio/UI/Main Background Music.ogg" id="2_enqet"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_enqet")
+
+[node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("1_f8yfr")
+bus = &"UI"
+
+[node name="MenuMusic" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_enqet")
+autoplay = true
+bus = &"Background_Music"

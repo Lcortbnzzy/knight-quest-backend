@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade2_Math_23"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What is the total value of 3 quarters?"
+Answers = PackedStringArray("50¢", "75¢", "60¢", "65¢")
+CorrectAnswerIndex = 1
+CorrectAnswer = "75¢"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

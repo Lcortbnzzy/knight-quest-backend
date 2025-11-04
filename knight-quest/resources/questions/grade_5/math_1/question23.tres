@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade5_Math_23"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "Convert 2.5 meters to centimeters."
+Answers = PackedStringArray("25 cm", "250 cm", "2,500 cm", "25,000 cm")
+CorrectAnswerIndex = 1
+CorrectAnswer = "250 cm"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade5_Math_10"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What is the volume of a box with length 4 cm, width 3 cm, and height 2 cm?"
+Answers = PackedStringArray("18 cm³", "20 cm³", "24 cm³", "28 cm³")
+CorrectAnswerIndex = 2
+CorrectAnswer = "24 cm³"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

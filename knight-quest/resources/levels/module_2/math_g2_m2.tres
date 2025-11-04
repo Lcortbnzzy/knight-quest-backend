@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="LevelInfo" load_steps=31 format=3 uid="uid://bys0c3ygp5653"]
+
+[ext_resource type="Script" uid="uid://bacok55bipbse" path="res://scripts/data/level/LevelInfo.cs" id="1_ljrbf"]
+[ext_resource type="PackedScene" uid="uid://pgk7i76mo1f3" path="res://scenes/entities/enemies/golem.tscn" id="1_s4owg"]
+[ext_resource type="Script" uid="uid://cb136e6c67ahm" path="res://scripts/data/level/Encounter.cs" id="2_qsdw5"]
+[ext_resource type="Script" uid="uid://cqe31o4yik31k" path="res://scripts/data/level/CombatSequence.cs" id="3_4nru5"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question1.tres" id="4_sgvoo"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question2.tres" id="5_dqi0t"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question3.tres" id="6_utwsy"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question4.tres" id="7_eod8x"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question5.tres" id="8_roh36"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question6.tres" id="9_b4d7n"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question7.tres" id="10_5vaug"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question8.tres" id="11_7mhv5"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question9.tres" id="12_h3iql"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question10.tres" id="13_pw80e"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question11.tres" id="14_jim8d"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question12.tres" id="15_lqtph"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question13.tres" id="16_ua4an"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question14.tres" id="17_vxx1k"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question15.tres" id="18_x8x4v"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question16.tres" id="19_lu1f7"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question17.tres" id="20_oa2in"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question18.tres" id="21_cdflj"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question19.tres" id="22_i3dko"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question20.tres" id="23_401wj"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question21.tres" id="24_pfw6s"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question22.tres" id="25_4sy4m"]
+[ext_resource type="Resource" path="res://resources/questions/grade_2/math_2/question23.tres" id="26_4of32"]
+[ext_resource type="Resource" uid="uid://b0mwe8u8nrhov" path="res://resources/questions/grade_2/math_2/question24.tres" id="27_wwo1h"]
+
+[sub_resource type="Resource" id="Resource_p1tjr"]
+script = ExtResource("2_qsdw5")
+Enemies = [ExtResource("1_s4owg")]
+metadata/_custom_type_script = "uid://cb136e6c67ahm"
+
+[sub_resource type="Resource" id="Resource_js5n5"]
+script = ExtResource("3_4nru5")
+Encounters = [SubResource("Resource_p1tjr")]
+metadata/_custom_type_script = "uid://cqe31o4yik31k"
+
+[resource]
+script = ExtResource("1_ljrbf")
+LevelName = "Math World 2 – Stage 2"
+Subject = 1
+Grade = 1
+CombatSequence = SubResource("Resource_js5n5")
+Questions = Array[Object]([ExtResource("4_sgvoo"), ExtResource("5_dqi0t"), ExtResource("6_utwsy"), ExtResource("7_eod8x"), ExtResource("8_roh36"), ExtResource("9_b4d7n"), ExtResource("10_5vaug"), ExtResource("11_7mhv5"), ExtResource("12_h3iql"), ExtResource("13_pw80e"), ExtResource("14_jim8d"), ExtResource("15_lqtph"), ExtResource("16_ua4an"), ExtResource("17_vxx1k"), ExtResource("18_x8x4v"), ExtResource("19_lu1f7"), ExtResource("20_oa2in"), ExtResource("21_cdflj"), ExtResource("22_i3dko"), ExtResource("23_401wj"), ExtResource("24_pfw6s"), ExtResource("25_4sy4m"), ExtResource("26_4of32"), ExtResource("27_wwo1h")])
+metadata/_custom_type_script = "uid://bacok55bipbse"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade3_Math_21"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What fraction of the shape is shaded if 2 out of 5 parts are shaded?"
+Answers = PackedStringArray("2/5", "3/5", "1/5", "4/5")
+CorrectAnswerIndex = 0
+CorrectAnswer = "2/5"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

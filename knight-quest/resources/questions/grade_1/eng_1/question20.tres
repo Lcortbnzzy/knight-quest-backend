@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade1_English_20"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What do you use to write?"
+Answers = PackedStringArray("Pencil", "Spoon", "Ball", "Book")
+CorrectAnswerIndex = 0
+CorrectAnswer = "Pencil"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

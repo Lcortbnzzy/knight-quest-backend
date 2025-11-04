@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://37vrxlbu6dlv"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What letter comes before F?"
+Answers = PackedStringArray("G", "E", "H", "I")
+CorrectAnswerIndex = 1
+CorrectAnswer = "E"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

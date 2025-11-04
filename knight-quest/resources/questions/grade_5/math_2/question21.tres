@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade5_Math_21"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "Convert 2.5 km to meters."
+Answers = PackedStringArray("250 m", "2,000 m", "2,500 m", "25,000 m")
+CorrectAnswerIndex = 2
+CorrectAnswer = "2,500 m"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://66re07be0y7h"
+path="res://.godot/imported/demon pawn running.wav-0bbb2c1391e3e682522535a089c9c1e8.sample"
+
+[deps]
+
+source_file="res://assets/audio/Enemies/Demon Pawn/demon pawn running.wav"
+dest_files=["res://.godot/imported/demon pawn running.wav-0bbb2c1391e3e682522535a089c9c1e8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

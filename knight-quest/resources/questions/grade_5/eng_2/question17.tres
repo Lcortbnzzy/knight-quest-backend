@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade5_English_17"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "Which is an example of an **on**omatopoeia?"
+Answers = PackedStringArray("The sun is a giant ball of fire.", "The wind whispered secrets.", "The clock went *tick-tock*.", "She is as busy as a bee.")
+CorrectAnswerIndex = 2
+CorrectAnswer = "The clock went *tick-tock*."
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

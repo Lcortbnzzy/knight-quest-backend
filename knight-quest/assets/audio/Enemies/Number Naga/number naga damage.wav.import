@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bbj7ruxp12ten"
+path="res://.godot/imported/number naga damage.wav-04e034125440c729f865c5f34ce42cea.sample"
+
+[deps]
+
+source_file="res://assets/audio/Enemies/Number Naga/number naga damage.wav"
+dest_files=["res://.godot/imported/number naga damage.wav-04e034125440c729f865c5f34ce42cea.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

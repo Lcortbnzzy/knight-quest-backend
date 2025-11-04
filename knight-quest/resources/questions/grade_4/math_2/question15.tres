@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade4_Math_15"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "How many degrees are in a right angle?"
+Answers = PackedStringArray("180", "90", "45", "60")
+CorrectAnswerIndex = 1
+CorrectAnswer = "90"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

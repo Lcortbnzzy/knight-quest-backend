@@ -1,0 +1,78 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String
+  firstName String
+  lastName  String
+  role      Role     @default(Student)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations with distinct names
+  save      Save?
+  asTeacher TeacherStudent[] @relation("TeacherStudents_teacher")
+  asStudent TeacherStudent[] @relation("TeacherStudents_student")
+  asParent  ParentChild[]    @relation("ParentChild_parent")
+  asChild   ParentChild[]    @relation("ParentChild_child")
+
+  @@map("users")
+}
+
+model TeacherStudent {
+  id        Int      @id @default(autoincrement())
+  teacherId Int
+  studentId Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  teacher User @relation("TeacherStudents_teacher", fields: [teacherId], references: [id], onDelete: Cascade)
+  student User @relation("TeacherStudents_student", fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@unique([teacherId, studentId])
+  @@map("teacher_students")
+}
+
+model ParentChild {
+  id        Int      @id @default(autoincrement())
+  parentId  Int
+  childId   Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  parent User @relation("ParentChild_parent", fields: [parentId], references: [id], onDelete: Cascade)
+  child  User @relation("ParentChild_child", fields: [childId], references: [id], onDelete: Cascade)
+
+  @@unique([parentId, childId])
+  @@map("parent_child")
+}
+
+model Save {
+  userId Int  @id
+  data   Json @default("{\"account\":null,\"progression\":{\"totalStarsEarned\":0,\"levelsFinished\":[]},\"inventory\":[],\"shop\":{\"stars\":0,\"purchaseHistory\":[]}}")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("saves")
+}
+
+enum Role {
+  Student
+  Teacher
+  Parent
+  Admin
+}

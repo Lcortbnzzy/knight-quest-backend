@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxhclrwk5d6be"]
+
+[ext_resource type="Texture2D" uid="uid://dr42d47a3xg60" path="res://assets/art/ui/buttons.png" id="1_wqnbs"]
+[ext_resource type="Script" uid="uid://kxet6f1i50wg" path="res://scripts/ui/common/BackButton.cs" id="2_rkpqu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t8x4p"]
+texture = ExtResource("1_wqnbs")
+region_rect = Rect2(0, 66, 32, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cfi71"]
+texture = ExtResource("1_wqnbs")
+region_rect = Rect2(128, 66, 32, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rkpqu"]
+texture = ExtResource("1_wqnbs")
+region_rect = Rect2(64, 66, 32, 30)
+
+[node name="BackButton" type="Button"]
+custom_minimum_size = Vector2(40, 40)
+offset_right = 11.0
+offset_bottom = 11.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_t8x4p")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cfi71")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rkpqu")
+script = ExtResource("2_rkpqu")

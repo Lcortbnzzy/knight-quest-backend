@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="LevelInfo" load_steps=31 format=3 uid="uid://b8v3gd3h605pe"]
+
+[ext_resource type="PackedScene" uid="uid://pgk7i76mo1f3" path="res://scenes/entities/enemies/golem.tscn" id="1_6v5mt"]
+[ext_resource type="Script" uid="uid://cb136e6c67ahm" path="res://scripts/data/level/Encounter.cs" id="1_8inmx"]
+[ext_resource type="Script" uid="uid://cqe31o4yik31k" path="res://scripts/data/level/CombatSequence.cs" id="2_xec7v"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question1.tres" id="3_8t42o"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question2.tres" id="4_risyp"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question3.tres" id="5_6f8an"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question4.tres" id="6_u3mnf"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question5.tres" id="7_xeooy"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question6.tres" id="8_3vgdf"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question7.tres" id="9_b6nx4"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question8.tres" id="10_knwv4"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question9.tres" id="11_crl53"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question10.tres" id="12_mvjp4"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question11.tres" id="13_mdrcn"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question12.tres" id="14_76e8i"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question13.tres" id="15_ps0js"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question14.tres" id="16_4cdsq"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question15.tres" id="17_sqlao"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question16.tres" id="18_gedna"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question17.tres" id="19_m7cl0"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question18.tres" id="20_blwmc"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question19.tres" id="21_ydyto"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question20.tres" id="22_dyxbr"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question21.tres" id="23_3mg6c"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question22.tres" id="24_o0k5b"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question23.tres" id="25_vrau0"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_1/question24.tres" id="26_7m0xo"]
+[ext_resource type="Script" uid="uid://bacok55bipbse" path="res://scripts/data/level/LevelInfo.cs" id="27_8otoh"]
+
+[sub_resource type="Resource" id="Resource_62j37"]
+script = ExtResource("1_8inmx")
+Enemies = [ExtResource("1_6v5mt")]
+metadata/_custom_type_script = "uid://cb136e6c67ahm"
+
+[sub_resource type="Resource" id="Resource_tpwqo"]
+script = ExtResource("2_xec7v")
+Encounters = [SubResource("Resource_62j37")]
+metadata/_custom_type_script = "uid://cqe31o4yik31k"
+
+[resource]
+script = ExtResource("27_8otoh")
+LevelName = "English World 3 – Stage 1"
+Grade = 2
+CombatSequence = SubResource("Resource_tpwqo")
+StarCount = 100
+Questions = Array[Object]([ExtResource("3_8t42o"), ExtResource("4_risyp"), ExtResource("5_6f8an"), ExtResource("6_u3mnf"), ExtResource("7_xeooy"), ExtResource("8_3vgdf"), ExtResource("9_b6nx4"), ExtResource("10_knwv4"), ExtResource("11_crl53"), ExtResource("12_mvjp4"), ExtResource("13_mdrcn"), ExtResource("14_76e8i"), ExtResource("15_ps0js"), ExtResource("16_4cdsq"), ExtResource("17_sqlao"), ExtResource("18_gedna"), ExtResource("19_m7cl0"), ExtResource("20_blwmc"), ExtResource("21_ydyto"), ExtResource("22_dyxbr"), ExtResource("23_3mg6c"), ExtResource("24_o0k5b"), ExtResource("25_vrau0"), ExtResource("26_7m0xo")])
+metadata/_custom_type_script = "uid://bacok55bipbse"

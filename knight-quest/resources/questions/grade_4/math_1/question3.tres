@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade4_Math_3"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "Subtract 8,000 - 4,567."
+Answers = PackedStringArray("3,433", "4,433", "3,533", "4,533")
+CorrectAnswerIndex = 0
+CorrectAnswer = "3,433"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade2_Math_28"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "If it is 3:00 PM now, what time will it be in 2 hours?"
+Answers = PackedStringArray("4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM")
+CorrectAnswerIndex = 1
+CorrectAnswer = "5:00 PM"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

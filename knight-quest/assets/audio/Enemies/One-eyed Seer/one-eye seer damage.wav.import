@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3a0cv1yhlvch"
+path="res://.godot/imported/one-eye seer damage.wav-3ba2de7c86d4bcdbd3a579aa8f2517c5.sample"
+
+[deps]
+
+source_file="res://assets/audio/Enemies/One-eyed Seer/one-eye seer damage.wav"
+dest_files=["res://.godot/imported/one-eye seer damage.wav-3ba2de7c86d4bcdbd3a579aa8f2517c5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

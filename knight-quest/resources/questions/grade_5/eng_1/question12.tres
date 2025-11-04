@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade5_English_12"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What is the plural of 'child'?"
+Answers = PackedStringArray("Childs", "Childrens", "Children", "Child")
+CorrectAnswerIndex = 2
+CorrectAnswer = "Children"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

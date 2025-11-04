@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade5_English_20"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What is the prefix in the word "rearrange"?"
+Answers = PackedStringArray("Rearrange", "Rear", "Re-", "Arrange")
+CorrectAnswerIndex = 2
+CorrectAnswer = "Re-"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

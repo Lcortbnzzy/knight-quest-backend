@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade5_English_18"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "Which sentence is an exclamation?"
+Answers = PackedStringArray("I am tired", "I love this song!", "Where are you going", "He runs fast")
+CorrectAnswerIndex = 1
+CorrectAnswer = "I love this song!"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

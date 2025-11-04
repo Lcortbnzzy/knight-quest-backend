@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade3_Math_12"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "Round 473 to the nearest hundred."
+Answers = PackedStringArray("400", "470", "500", "480")
+CorrectAnswerIndex = 2
+CorrectAnswer = "500"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

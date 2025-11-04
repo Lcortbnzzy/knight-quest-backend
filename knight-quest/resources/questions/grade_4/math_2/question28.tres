@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade4_Math_28"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "Which number sentence is true?"
+Answers = PackedStringArray("3 x 7 = 20", "5 x 5 = 25", "4 x 4 = 12", "6 x 2 = 10")
+CorrectAnswerIndex = 1
+CorrectAnswer = "5 x 5 = 25"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

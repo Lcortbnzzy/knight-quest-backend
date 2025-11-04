@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade6_Math_15"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "A ratio of 2:5 means:"
+Answers = PackedStringArray("For every 5 parts, there are 2 total", "For every 2 parts, there are 5 total", "For every 2 parts, there are 5 parts", "For every 7 parts, 5 are shaded")
+CorrectAnswerIndex = 2
+CorrectAnswer = "For every 2 parts, there are 5 parts"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

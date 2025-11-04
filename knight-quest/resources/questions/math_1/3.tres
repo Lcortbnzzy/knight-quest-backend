@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://dbgfpefoe0cbg"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_gf55e"]
+
+[resource]
+script = ExtResource("1_gf55e")
+QuestionText = "Which is the sum of 45 + 32?"
+Answers = PackedStringArray("67", "77", "78", "79")
+CorrectAnswerIndex = 1
+CorrectAnswer = "77"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

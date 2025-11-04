@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade4_Math_1"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What is the value of 6 in the number 5,638?"
+Answers = PackedStringArray("6", "60", "600", "6,000")
+CorrectAnswerIndex = 2
+CorrectAnswer = "600"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

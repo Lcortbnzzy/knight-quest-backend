@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade2_English_24"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What game is Tom playing?"
+Answers = PackedStringArray("Catch", "Hide and seek", "Tag", "Jump rope")
+CorrectAnswerIndex = 0
+CorrectAnswer = "Catch"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

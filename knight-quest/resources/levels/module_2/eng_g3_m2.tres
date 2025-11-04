@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="LevelInfo" load_steps=34 format=3 uid="uid://bplm1lg3lj1jk"]
+
+[ext_resource type="Script" uid="uid://bacok55bipbse" path="res://scripts/data/level/LevelInfo.cs" id="1_j0rsk"]
+[ext_resource type="PackedScene" uid="uid://8080s6xfdm22" path="res://scenes/entities/enemies/number_naga.tscn" id="1_qfmuu"]
+[ext_resource type="Script" uid="uid://cb136e6c67ahm" path="res://scripts/data/level/Encounter.cs" id="2_3stpa"]
+[ext_resource type="Script" uid="uid://cqe31o4yik31k" path="res://scripts/data/level/CombatSequence.cs" id="3_t20bw"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_2/question1.tres" id="4_jx8lo"]
+[ext_resource type="Resource" uid="uid://oq20iuooqx3y" path="res://resources/questions/grade_3/eng_2/question2.tres" id="5_e5oat"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_2/question3.tres" id="6_ixdem"]
+[ext_resource type="Resource" uid="uid://d163wtg7ng812" path="res://resources/questions/grade_3/eng_2/question4.tres" id="7_b4qvo"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_2/question5.tres" id="8_6mu1a"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_2/question6.tres" id="9_e408i"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_2/question7.tres" id="10_qr7ck"]
+[ext_resource type="Resource" uid="uid://bxpfwn6fqdsfb" path="res://resources/questions/grade_3/eng_2/question8.tres" id="11_atp60"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_2/question9.tres" id="12_sxuqx"]
+[ext_resource type="Resource" uid="uid://b0nnsgc6v1bd6" path="res://resources/questions/grade_3/eng_2/question10.tres" id="13_lta3d"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_2/question11.tres" id="14_vhi2p"]
+[ext_resource type="Resource" uid="uid://bicoofyg64lmn" path="res://resources/questions/grade_3/eng_2/question12.tres" id="15_h5y32"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_2/question13.tres" id="16_vqklh"]
+[ext_resource type="Resource" uid="uid://dw8b466gd35dw" path="res://resources/questions/grade_3/eng_2/question14.tres" id="17_2dwad"]
+[ext_resource type="Resource" uid="uid://bsoo0o7h4mkks" path="res://resources/questions/grade_3/eng_2/question15.tres" id="18_5i2gi"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_2/question16.tres" id="19_mc1gg"]
+[ext_resource type="Resource" uid="uid://db7fahn0v0odu" path="res://resources/questions/grade_3/eng_2/question17.tres" id="20_ry6ur"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_2/question18.tres" id="21_7g841"]
+[ext_resource type="Resource" uid="uid://cb5erx26b2he7" path="res://resources/questions/grade_3/eng_2/question19.tres" id="22_s77lv"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_2/question20.tres" id="23_a3cfw"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_2/question21.tres" id="24_qpslp"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_2/question22.tres" id="25_t73qk"]
+[ext_resource type="Resource" uid="uid://b0v5d6t8d5cks" path="res://resources/questions/grade_3/eng_2/question23.tres" id="26_m5ksf"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_2/question24.tres" id="27_p2wfn"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_2/question25.tres" id="28_6367x"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_2/question26.tres" id="29_istq6"]
+[ext_resource type="Resource" path="res://resources/questions/grade_3/eng_2/question27.tres" id="30_o844t"]
+
+[sub_resource type="Resource" id="Resource_ffry2"]
+script = ExtResource("2_3stpa")
+Enemies = [ExtResource("1_qfmuu")]
+metadata/_custom_type_script = "uid://cb136e6c67ahm"
+
+[sub_resource type="Resource" id="Resource_ngr6s"]
+script = ExtResource("3_t20bw")
+Encounters = [SubResource("Resource_ffry2")]
+metadata/_custom_type_script = "uid://cqe31o4yik31k"
+
+[resource]
+script = ExtResource("1_j0rsk")
+LevelName = "English World 3 – Stage 2"
+Grade = 2
+CombatSequence = SubResource("Resource_ngr6s")
+StarCount = 27
+Questions = Array[Object]([ExtResource("4_jx8lo"), ExtResource("5_e5oat"), ExtResource("6_ixdem"), ExtResource("7_b4qvo"), ExtResource("8_6mu1a"), ExtResource("9_e408i"), ExtResource("10_qr7ck"), ExtResource("11_atp60"), ExtResource("12_sxuqx"), ExtResource("13_lta3d"), ExtResource("14_vhi2p"), ExtResource("15_h5y32"), ExtResource("16_vqklh"), ExtResource("17_2dwad"), ExtResource("18_5i2gi"), ExtResource("19_mc1gg"), ExtResource("20_ry6ur"), ExtResource("21_7g841"), ExtResource("22_s77lv"), ExtResource("23_a3cfw"), ExtResource("24_qpslp"), ExtResource("25_t73qk"), ExtResource("26_m5ksf"), ExtResource("27_p2wfn"), ExtResource("28_6367x"), ExtResource("29_istq6"), ExtResource("30_o844t")])
+metadata/_custom_type_script = "uid://bacok55bipbse"

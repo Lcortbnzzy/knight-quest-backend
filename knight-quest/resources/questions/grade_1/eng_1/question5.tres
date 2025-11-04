@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://b7ey8q3grhhmu"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What letter is this? M"
+Answers = PackedStringArray("N", "M", "W", "H")
+CorrectAnswerIndex = 1
+CorrectAnswer = "M"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

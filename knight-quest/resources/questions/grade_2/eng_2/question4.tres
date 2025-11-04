@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://b0a0y6o0l372u"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "Which word is an adjective?"
+Answers = PackedStringArray("Blue", "Jump", "Dog", "Run")
+CorrectAnswer = "Blue"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

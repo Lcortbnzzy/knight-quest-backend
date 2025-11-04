@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://cgik77oarjbx7"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_apgdk"]
+
+[resource]
+script = ExtResource("1_apgdk")
+QuestionText = "What is 100 − 56?"
+Answers = PackedStringArray("44", "45", "46", "47")
+CorrectAnswerIndex = 0
+CorrectAnswer = "44"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

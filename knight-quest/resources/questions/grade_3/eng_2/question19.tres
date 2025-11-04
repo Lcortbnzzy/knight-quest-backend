@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://cb5erx26b2he7"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What is the past tense of \"go\""
+Answers = PackedStringArray("Goed", "Went", "Going", "Goes")
+CorrectAnswerIndex = 1
+CorrectAnswer = "Went"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

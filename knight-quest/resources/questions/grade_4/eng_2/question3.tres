@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://o31oi1py5s6f"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What is the superlative form of the adjective \"big\""
+Answers = PackedStringArray("Bigger", "Biggest", "More big", "Bigest")
+CorrectAnswerIndex = 1
+CorrectAnswer = "Biggest"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

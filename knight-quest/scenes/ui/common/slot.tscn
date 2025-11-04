@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://df6ouxjtq5fcc"]
+
+[ext_resource type="Theme" uid="uid://c5ct36yck13hr" path="res://resources/knight_theme.tres" id="1_5u32p"]
+[ext_resource type="Texture2D" uid="uid://b3u3w2c8h4jb2" path="res://assets/art/ui/nine patch.png" id="2_5u32p"]
+[ext_resource type="Script" uid="uid://b6os00ul6rlvg" path="res://scripts/ui/common/Slot.cs" id="3_3y3i6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5u32p"]
+atlas = ExtResource("2_5u32p")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o5mpp"]
+texture = SubResource("AtlasTexture_5u32p")
+
+[node name="Slot" type="Panel"]
+custom_minimum_size = Vector2(40, 40)
+offset_right = 32.0
+offset_bottom = 32.0
+theme = ExtResource("1_5u32p")
+theme_override_styles/panel = SubResource("StyleBoxTexture_o5mpp")
+script = ExtResource("3_3y3i6")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+text = "99"
+horizontal_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

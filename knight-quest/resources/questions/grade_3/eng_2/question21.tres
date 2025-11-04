@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade3_English_21"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What is a proper noun?"
+Answers = PackedStringArray("city", "book", "London", "car")
+CorrectAnswerIndex = 2
+CorrectAnswer = "London"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

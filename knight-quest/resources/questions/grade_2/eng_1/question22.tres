@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade2_English_22"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What is the action in the sentence?"
+Answers = PackedStringArray("The boy", "eats", "an apple", "the")
+CorrectAnswerIndex = 1
+CorrectAnswer = "eats"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

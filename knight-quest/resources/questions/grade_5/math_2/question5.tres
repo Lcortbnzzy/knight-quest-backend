@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade5_Math_5"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What is the value of the digit 9 in 9,432?"
+Answers = PackedStringArray("9", "90", "900", "9,000")
+CorrectAnswerIndex = 3
+CorrectAnswer = "9,000"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

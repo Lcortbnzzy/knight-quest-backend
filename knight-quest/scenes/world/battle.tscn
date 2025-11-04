@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://0ioux0qjw16k"]
+
+[ext_resource type="Script" uid="uid://dw0w0v0uwrdqj" path="res://scripts/world/Battle.cs" id="1_5r7dh"]
+[ext_resource type="PackedScene" uid="uid://cf6rph7p0k8y7" path="res://scenes/ui/overlays/heads_up_display.tscn" id="1_hjx2g"]
+[ext_resource type="PackedScene" uid="uid://dfdm55jit0843" path="res://scenes/components/managers/run_manager.tscn" id="4_t5uxl"]
+[ext_resource type="Texture2D" uid="uid://cvlomnjiupynt" path="res://assets/art/ui/battle background with ground (dark).png" id="5_kvbus"]
+[ext_resource type="AudioStream" uid="uid://dsuktoao7jkol" path="res://assets/audio/UI/Battle Background Music.ogg" id="5_t5uxl"]
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_5r7dh")
+
+[node name="RunManager" parent="." node_paths=PackedStringArray("hud") instance=ExtResource("4_t5uxl")]
+hud = NodePath("../UI/HeadsUpDisplay")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.563
+offset_top = -6.0
+offset_bottom = -5.68001
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("5_kvbus")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_top = 0.564
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.04001
+offset_bottom = 197.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("5_kvbus")
+expand_mode = 1
+flip_v = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HeadsUpDisplay" parent="UI" instance=ExtResource("1_hjx2g")]
+unique_name_in_owner = true
+
+[node name="Entities" type="Node" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_t5uxl")
+autoplay = true
+bus = &"Background_Music"
+playback_type = 1
+parameters/looping = true

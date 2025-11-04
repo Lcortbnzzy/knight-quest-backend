@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade6_English_14"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What is the definition of a **homograph**?"
+Answers = PackedStringArray("Words that sound alike but have different meanings.", "Words that are spelled the same but have different meanings and sometimes different pronunciations.", "Words that are opposites.", "Words that mean the same thing.")
+CorrectAnswerIndex = 1
+CorrectAnswer = "Words that are spelled the same but have different meanings and sometimes different pronunciations."
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

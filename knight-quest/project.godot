@@ -1,0 +1,66 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Knight Quest"
+run/main_scene="uid://ddhhmeqatgqxl"
+config/features=PackedStringArray("4.5", "C#", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+QuestionManager="*res://scenes/autoloads/question_manager.tscn"
+ShopManager="*res://scripts/autoloads/ShopManager.cs"
+InventoryManager="*res://scripts/autoloads/InventoryManager.cs"
+GameManager="*res://scenes/autoloads/game_manager.tscn"
+Navigator="*res://scripts/autoloads/Navigator.cs"
+SaveManager="*res://scripts/autoloads/SaveManager.cs"
+AudioManager="*res://scenes/autoloads/audio_manager.tscn"
+ApiClient="*res://scenes/autoloads/api_client.tscn"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="Knight Quest"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/DeeplinkPlugin/plugin.cfg", "res://addons/center_pivot_offset/plugin.cfg", "res://addons/collapse_folders/plugin.cfg", "res://addons/node_library/plugin.cfg", "res://addons/palette_importer/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "gray",
+"res://assets/": "orange",
+"res://builds/": "gray",
+"res://resources/": "teal",
+"res://scenes/": "blue",
+"res://scripts/": "pink"
+}
+
+[gui]
+
+theme/custom_font="uid://0ta32sqcdfig"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

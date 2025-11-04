@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://dw8b466gd35dw"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "Which word starts with the letter \"G\" "
+Answers = PackedStringArray("Hat", "Goat", "Cat", "Bat")
+CorrectAnswerIndex = 1
+CorrectAnswer = "Goat"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

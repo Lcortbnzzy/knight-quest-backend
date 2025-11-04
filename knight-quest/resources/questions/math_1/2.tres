@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://1a3tlqbgveg8"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_v5hnp"]
+
+[resource]
+script = ExtResource("1_v5hnp")
+QuestionText = "What is 25 − 9?"
+Answers = PackedStringArray("14", "15", "16", "17")
+CorrectAnswerIndex = 2
+CorrectAnswer = "16"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

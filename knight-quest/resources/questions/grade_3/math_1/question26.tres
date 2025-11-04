@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade3_Math_26"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What is 5/10 simplified?"
+Answers = PackedStringArray("1/2", "2/5", "1/5", "3/10")
+CorrectAnswerIndex = 0
+CorrectAnswer = "1/2"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

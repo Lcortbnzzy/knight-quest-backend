@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade2_Math_23"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What time shows on the clock if the hour hand is on 7 and the minute hand is on 12?"
+Answers = PackedStringArray("7:00", "12:07", "6:00", "7:12")
+CorrectAnswerIndex = 0
+CorrectAnswer = "7:00"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

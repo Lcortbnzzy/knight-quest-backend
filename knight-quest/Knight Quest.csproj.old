@@ -1,0 +1,22 @@
+<Project Sdk="Godot.NET.Sdk/4.4.0">
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <EnableDynamicLoading>true</EnableDynamicLoading>
+        <RootNamespace>Game</RootNamespace>
+        <!-- <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+        <CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath> -->
+    </PropertyGroup>
+    <ItemGroup>
+        <Content Remove="script_templates\**;**\*.uid;android\**" />
+        <Compile Remove="script_templates\**;Scenes\**;android\**" />
+        <EmbeddedResource Remove="script_templates\**;Scenes\**;**\*.uid;android\**" />
+        <None Remove="script_templates\**;**\*.uid;android\**" />
+        <Compile Update="scripts\**\*.cs">
+            <Namespace>Game</Namespace>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Delaunator" Version="1.0.10" />
+        <PackageReference Include="Firebelley.GodotUtilities" Version="5.0.0" />
+    </ItemGroup>
+</Project>

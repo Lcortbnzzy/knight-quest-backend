@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade6_Math_30"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "What is the perimeter of a pentagon with side 5 cm?"
+Answers = PackedStringArray("20 cm", "25 cm", "30 cm", "35 cm")
+CorrectAnswerIndex = 1
+CorrectAnswer = "25 cm"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"

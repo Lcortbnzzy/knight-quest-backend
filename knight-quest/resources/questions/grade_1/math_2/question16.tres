@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://generated_Grade1_Math_16"]
+
+[ext_resource type="Script" uid="uid://bnxvkuvcnicjq" path="res://scripts/data/question/Question.cs" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+QuestionText = "How many legs do two dogs have?"
+Answers = PackedStringArray("6", "8", "4", "2")
+CorrectAnswerIndex = 1
+CorrectAnswer = "8"
+metadata/_custom_type_script = "uid://bnxvkuvcnicjq"
