@@ -7,6 +7,12 @@ WORKDIR /app
 # Install pnpm
 RUN npm install -g pnpm
 
+# Accept build argument with dummy default
+ARG DATABASE_URL=postgresql://dummy:dummy@localhost:5432/dummy
+
+# Set as environment variable for build time
+ENV DATABASE_URL=$DATABASE_URL
+
 # Copy package files and workspace config
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
