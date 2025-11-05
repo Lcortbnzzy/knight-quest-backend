@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dq7w6jfwki4g2"]
-
-[ext_resource type="Script" uid="uid://k4eug81gk81c" path="res://scripts/autoloads/ApiClient.cs" id="1_a4b78"]
-
-[node name="ApiClient" type="Node"]
-script = ExtResource("1_a4b78")
-baseUrl = "https://knight.lawrenceallen.tech"
