@@ -25,7 +25,7 @@ async function fetchGoogleUser(accessToken: string): Promise<GoogleUserInfo> {
     return await resp.json() as GoogleUserInfo
 }
 
-export const get: Handler = async (req, res) => {
+export const GET: Handler = async (req, res) => {
     const { code, state } = req.query as { code?: string, state?: string }
 
     if (!code) {
