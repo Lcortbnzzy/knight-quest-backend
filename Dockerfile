@@ -2,8 +2,6 @@
 FROM node:20-alpine AS installer
 RUN apk add --no-cache libc6-compat
 RUN apk update
-RUN ls -la /app/dist
-RUN ls -la /app/dist/routes || echo "routes folder not found"
 WORKDIR /app
 
 # Install pnpm
@@ -38,6 +36,10 @@ RUN pnpm prisma generate
 
 # Build the application
 RUN pnpm run build
+
+# Debug: Check if routes compiled
+RUN ls -la dist
+RUN ls -la dist/routes || echo "routes folder not found"
 
 # Stage 3: Production
 FROM node:20-alpine AS runner
