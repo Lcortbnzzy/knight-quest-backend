@@ -1,3 +1,3 @@
+// login.ts
 import { login } from '@controllers/auth'
-
-export const post = login
+export const POST = login  // ✅ uppercase
