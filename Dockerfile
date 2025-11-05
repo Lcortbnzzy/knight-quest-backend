@@ -2,6 +2,8 @@
 FROM node:20-alpine AS installer
 RUN apk add --no-cache libc6-compat
 RUN apk update
+RUN ls -la /app/dist
+RUN ls -la /app/dist/routes || echo "routes folder not found"
 WORKDIR /app
 
 # Install pnpm
