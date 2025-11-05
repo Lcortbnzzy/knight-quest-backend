@@ -77,7 +77,7 @@ export const updateSave = validateRequestBody(SaveSchema, async (req, res) => {
         console.log('⚠️ NO PROGRESSION IN SAVE DATA!')
     }
     
-    const save = await prisma.save.exists({ userId: user!.id })
+    const save = await prisma.save.findUnique({ where: { userId: user!.id } })
 
     if (!save) {
         console.log('❌ Save not found for user')
@@ -134,7 +134,7 @@ export const resetSave: RequestHandler = async (req, res) => {
     console.log('User ID:', user!.id)
     console.log('========================================')
 
-    const save = await prisma.save.exists({ userId: user!.id })
+    const save = await prisma.save.findUnique({ where: { userId: user!.id } })
 
     if (!save) {
         console.log('❌ Save not found for user')

@@ -41,22 +41,22 @@ export const login: RequestHandler = validateRequestBody(LoginSchema, async (req
 export const register: RequestHandler = validateRequestBody(RegisterSchema, async (req, res) => {
     const { teacherId, parentId, ...data } = req.parsedBody
 
-    const exists = await prisma.user.exists({ username: data.username })
+    const existingUser = await prisma.user.findUnique({ where: { username: data.username } })
 
-    if (exists) {
+    if (existingUser) {
         return res.badRequest({ message: 'Username already taken. Please choose another one.' })
     }
 
     if (teacherId) {
-        const teacherExists = await prisma.user.exists({ id: teacherId, role: Role.Teacher })
-        if (!teacherExists) {
+        const teacher = await prisma.user.findUnique({ where: { id: teacherId, role: Role.Teacher } })
+        if (!teacher) {
             return res.badRequest({ message: 'Invalid teacherId. Teacher not found.' })
         }
     }
 
     if (parentId) {
-        const parentExists = await prisma.user.exists({ id: parentId, role: Role.Parent })
-        if (!parentExists) {
+        const parent = await prisma.user.findUnique({ where: { id: parentId, role: Role.Parent } })
+        if (!parent) {
             return res.badRequest({ message: 'Invalid parentId. Parent not found.' })
         }
     }
