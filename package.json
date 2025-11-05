@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
-    "build": "tsc && tsc-alias --resolve-full-paths"
+    "build": "npx prisma migrate deploy && tsc && tsc-alias --resolve-full-paths"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^6.16.2",
