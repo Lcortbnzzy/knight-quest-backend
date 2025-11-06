@@ -1,3 +1,4 @@
+// callback.ts - Backend generates a short PIN code
 import type { Handler } from 'express'
 import { prisma } from '@utils/database'
 import { Role } from '@prisma/client'
@@ -25,6 +26,11 @@ async function fetchGoogleUser(accessToken: string): Promise<GoogleUserInfo> {
     return await resp.json() as GoogleUserInfo
 }
 
+// Generate a random 6-digit PIN
+function generatePIN(): string {
+    return Math.floor(100000 + Math.random() * 900000).toString()
+}
+
 export const GET: Handler = async (req, res) => {
     const { code, state } = req.query as { code?: string, state?: string }
 
@@ -39,9 +45,6 @@ export const GET: Handler = async (req, res) => {
             <body style="font-family: sans-serif; text-align: center; padding: 50px;">
                 <h2>Authentication Error</h2>
                 <p>Missing authorization code.</p>
-                <a href="knightquest://auth?error=missing_code" style="display: inline-block; padding: 12px 24px; background: #db4437; color: white; text-decoration: none; border-radius: 4px; margin-top: 20px;">
-                    Return to App
-                </a>
             </body>
             </html>
         `)
@@ -85,38 +88,39 @@ export const GET: Handler = async (req, res) => {
                 <body style="font-family: sans-serif; text-align: center; padding: 50px;">
                     <h2>Authentication Error</h2>
                     <p>Failed to generate token.</p>
-                    <a href="knightquest://auth?error=token_issue" style="display: inline-block; padding: 12px 24px; background: #db4437; color: white; text-decoration: none; border-radius: 4px; margin-top: 20px;">
-                        Return to App
-                    </a>
                 </body>
                 </html>
             `)
         }
 
-        // Build query params with user data
-        const qs = new URLSearchParams({ 
-            token: jwt,
-            username: username,
-            firstName: firstName,
-            lastName: lastName
-        })
-        if (state) qs.set('state', state)
+        // Generate PIN and store temporarily (expires in 5 minutes)
+        const pin = generatePIN()
+        
+        // Store in Redis or database with expiry
+        // For now, using a simple in-memory store (replace with Redis in production)
+        await prisma.$executeRaw`
+            INSERT INTO auth_pins (pin, token, username, first_name, last_name, expires_at)
+            VALUES (${pin}, ${jwt}, ${username}, ${firstName}, ${lastName}, NOW() + INTERVAL '5 minutes')
+            ON CONFLICT (pin) DO UPDATE SET
+                token = ${jwt},
+                username = ${username},
+                first_name = ${firstName},
+                last_name = ${lastName},
+                expires_at = NOW() + INTERVAL '5 minutes'
+        `
 
-        // Redirect directly to main menu instead of login screen
-        const deeplink = `knightquest://auth?${qs.toString()}`
-
-        // Return HTML page with auto-redirect + manual fallback button
+        // Show PIN to user
         return res.send(`
             <!DOCTYPE html>
             <html>
             <head>
                 <meta name="viewport" content="width=device-width, initial-scale=1">
-                <title>Success - Redirecting...</title>
+                <title>Success!</title>
                 <style>
                     body {
                         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
                         text-align: center;
-                        padding: 50px 20px;
+                        padding: 20px;
                         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                         color: white;
                         min-height: 100vh;
@@ -132,92 +136,96 @@ export const GET: Handler = async (req, res) => {
                         border-radius: 12px;
                         box-shadow: 0 10px 40px rgba(0,0,0,0.2);
                         max-width: 400px;
+                        width: 100%;
                     }
                     h2 {
                         color: #4285f4;
                         margin-bottom: 10px;
                     }
-                    .spinner {
-                        border: 4px solid #f3f3f3;
-                        border-top: 4px solid #4285f4;
-                        border-radius: 50%;
-                        width: 40px;
-                        height: 40px;
-                        animation: spin 1s linear infinite;
-                        margin: 20px auto;
+                    .pin-box {
+                        background: #f5f5f5;
+                        border: 3px dashed #4285f4;
+                        border-radius: 8px;
+                        padding: 30px;
+                        margin: 30px 0;
                     }
-                    @keyframes spin {
-                        0% { transform: rotate(0deg); }
-                        100% { transform: rotate(360deg); }
+                    .pin {
+                        font-size: 48px;
+                        font-weight: bold;
+                        letter-spacing: 8px;
+                        color: #4285f4;
+                        font-family: 'Courier New', monospace;
                     }
-                    .btn {
-                        display: inline-block;
-                        padding: 14px 28px;
+                    .instructions {
+                        font-size: 16px;
+                        color: #666;
+                        line-height: 1.6;
+                        margin-top: 20px;
+                    }
+                    .instructions ol {
+                        text-align: left;
+                        padding-left: 20px;
+                    }
+                    .instructions li {
+                        margin: 10px 0;
+                    }
+                    .expires {
+                        font-size: 14px;
+                        color: #db4437;
+                        margin-top: 20px;
+                        font-weight: bold;
+                    }
+                    .copy-btn {
                         background: #4285f4;
                         color: white;
-                        text-decoration: none;
+                        border: none;
+                        padding: 12px 24px;
                         border-radius: 6px;
-                        margin-top: 20px;
+                        font-size: 16px;
                         font-weight: 600;
-                        transition: background 0.3s;
+                        cursor: pointer;
+                        margin-top: 15px;
                     }
-                    .btn:hover {
+                    .copy-btn:active {
                         background: #357ae8;
                     }
-                    .note {
-                        font-size: 14px;
-                        color: #666;
-                        margin-top: 15px;
+                    .success-icon {
+                        font-size: 60px;
+                        margin-bottom: 20px;
                     }
                 </style>
             </head>
             <body>
                 <div class="container">
-                    <h2>✅ Authentication Successful!</h2>
-                    <div class="spinner"></div>
-                    <p>Redirecting back to Knight Quest...</p>
-                    <a href="${deeplink}" class="btn" id="manualBtn" style="display: none;">
-                        🎮 Open Knight Quest
-                    </a>
-                    <p class="note" id="note" style="display: none;">
-                        Tap the button above if you're not redirected automatically.
-                    </p>
+                    <div class="success-icon">✅</div>
+                    <h2>Authentication Successful!</h2>
+                    <p>Enter this PIN in Knight Quest:</p>
+                    
+                    <div class="pin-box">
+                        <div class="pin" id="pin">${pin}</div>
+                        <button class="copy-btn" onclick="copyPin()">📋 Copy PIN</button>
+                    </div>
+                    
+                    <div class="instructions">
+                        <ol>
+                            <li>Go back to Knight Quest app</li>
+                            <li>Enter the PIN above</li>
+                            <li>Tap "Verify PIN" to complete login</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="expires">⏱️ PIN expires in 5 minutes</div>
                 </div>
                 <script>
-                    // Multiple redirect attempts
-                    function attemptRedirect() {
-                        try {
-                            // Method 1: Direct assignment
-                            window.location.href = '${deeplink}';
-                            
-                            // Method 2: Replace (after delay)
+                    function copyPin() {
+                        const pin = document.getElementById('pin').textContent;
+                        navigator.clipboard.writeText(pin).then(() => {
+                            const btn = event.target;
+                            btn.textContent = '✅ Copied!';
                             setTimeout(() => {
-                                window.location.replace('${deeplink}');
-                            }, 100);
-                            
-                            // Method 3: Try to open in new context
-                            setTimeout(() => {
-                                window.open('${deeplink}', '_self');
-                            }, 200);
-                            
-                            // Show manual button after 2 seconds if still here
-                            setTimeout(() => {
-                                document.getElementById('manualBtn').style.display = 'inline-block';
-                                document.getElementById('note').style.display = 'block';
+                                btn.textContent = '📋 Copy PIN';
                             }, 2000);
-                        } catch (e) {
-                            console.error('Redirect failed:', e);
-                            // Show button immediately on error
-                            document.getElementById('manualBtn').style.display = 'inline-block';
-                            document.getElementById('note').style.display = 'block';
-                        }
-                    }
-                    
-                    // Start redirect attempts when page loads
-                    if (document.readyState === 'loading') {
-                        document.addEventListener('DOMContentLoaded', attemptRedirect);
-                    } else {
-                        attemptRedirect();
+                        });
                     }
                 </script>
             </body>
@@ -236,9 +244,6 @@ export const GET: Handler = async (req, res) => {
             <body style="font-family: sans-serif; text-align: center; padding: 50px;">
                 <h2>Authentication Failed</h2>
                 <p>An error occurred during authentication.</p>
-                <a href="knightquest://auth?error=auth_failed" style="display: inline-block; padding: 12px 24px; background: #db4437; color: white; text-decoration: none; border-radius: 4px; margin-top: 20px;">
-                    Return to App
-                </a>
             </body>
             </html>
         `)
