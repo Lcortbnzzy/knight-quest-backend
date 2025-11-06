@@ -1,6 +1,6 @@
 import middlewares from '@middlewares'
 import { Role } from '@prisma/client'
-//import { getSave, resetSave, updateSave } from '@controllers/save'
+import { getSave, resetSave, updateSave } from '@controllers/save'  // ✅ UNCOMMENT
 import { Handler } from 'express'
 
 console.log('📁📁📁 SAVE ROUTE FILE LOADED! 📁📁📁')
@@ -17,17 +17,17 @@ const debugMiddleware: Handler = (req, res, next) => {
 export const get = [
     debugMiddleware,
     middlewares.authenticate,
-    //getSave
+    getSave  // ✅ UNCOMMENT
 ]
 
 export const put = [
     debugMiddleware,
     middlewares.authenticate,
-   // updateSave
+    updateSave  // ✅ UNCOMMENT
 ]
 
 export const del = [
     debugMiddleware,
     middlewares.authenticate,
-   // resetSave
+    resetSave  // ✅ UNCOMMENT
 ]

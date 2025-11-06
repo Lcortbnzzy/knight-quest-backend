@@ -1,6 +1,5 @@
-import { Handler } from 'express'
-import { Response } from '@utils/response'
+import { getSave, updateSave, resetSave } from '@controllers/save'
 
-export const get: Handler = async (req, res) => {
-    return res.respond(Response.success({ message: 'API is running' }))
-}
+export const get = getSave
+export const put = updateSave
+export const del = resetSave
