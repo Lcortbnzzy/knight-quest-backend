@@ -1,13 +1,9 @@
-import { env } from '@utils/env'
-import { logger } from '@utils/logging'
-import { createServer } from '@src/server'
+import { RequestHandler } from 'express'
 
-console.log('🚀🚀🚀 CONSOLE.LOG TEST - Server starting... 🚀🚀🚀');
-logger.info('🚀🚀🚀 LOGGER.INFO TEST - Server starting... 🚀🚀🚀');
+export const get: RequestHandler = (req, res) => {
+    res.ok({ message: 'Server is running!' })
+}
 
-const server = await createServer();
-
-server.listen(env.PORT, () => {
-    console.log('✅✅✅ CONSOLE.LOG - Server is running! ✅✅✅');
-    logger.info(`✅✅✅ LOGGER.INFO - Server is running on http://localhost:${env.PORT} ✅✅✅`);
-});
+export const head: RequestHandler = (req, res) => {
+    res.status(200).end()
+}
