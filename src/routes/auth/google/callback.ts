@@ -39,7 +39,7 @@ export const GET: Handler = async (req, res) => {
             <body style="font-family: sans-serif; text-align: center; padding: 50px;">
                 <h2>Authentication Error</h2>
                 <p>Missing authorization code.</p>
-                <a href="knightquest://login?error=missing_code" style="display: inline-block; padding: 12px 24px; background: #db4437; color: white; text-decoration: none; border-radius: 4px; margin-top: 20px;">
+                <a href="knightquest://auth?error=missing_code" style="display: inline-block; padding: 12px 24px; background: #db4437; color: white; text-decoration: none; border-radius: 4px; margin-top: 20px;">
                     Return to App
                 </a>
             </body>
@@ -85,7 +85,7 @@ export const GET: Handler = async (req, res) => {
                 <body style="font-family: sans-serif; text-align: center; padding: 50px;">
                     <h2>Authentication Error</h2>
                     <p>Failed to generate token.</p>
-                    <a href="knightquest://login?error=token_issue" style="display: inline-block; padding: 12px 24px; background: #db4437; color: white; text-decoration: none; border-radius: 4px; margin-top: 20px;">
+                    <a href="knightquest://auth?error=token_issue" style="display: inline-block; padding: 12px 24px; background: #db4437; color: white; text-decoration: none; border-radius: 4px; margin-top: 20px;">
                         Return to App
                     </a>
                 </body>
@@ -93,10 +93,17 @@ export const GET: Handler = async (req, res) => {
             `)
         }
 
-        const qs = new URLSearchParams({ token: jwt })
+        // Build query params with user data
+        const qs = new URLSearchParams({ 
+            token: jwt,
+            username: username,
+            firstName: firstName,
+            lastName: lastName
+        })
         if (state) qs.set('state', state)
 
-        const deeplink = `knightquest://login?${qs.toString()}`
+        // Redirect directly to main menu instead of login screen
+        const deeplink = `knightquest://auth?${qs.toString()}`
 
         // Return HTML page with auto-redirect + manual fallback button
         return res.send(`
@@ -229,7 +236,7 @@ export const GET: Handler = async (req, res) => {
             <body style="font-family: sans-serif; text-align: center; padding: 50px;">
                 <h2>Authentication Failed</h2>
                 <p>An error occurred during authentication.</p>
-                <a href="knightquest://login?error=auth_failed" style="display: inline-block; padding: 12px 24px; background: #db4437; color: white; text-decoration: none; border-radius: 4px; margin-top: 20px;">
+                <a href="knightquest://auth?error=auth_failed" style="display: inline-block; padding: 12px 24px; background: #db4437; color: white; text-decoration: none; border-radius: 4px; margin-top: 20px;">
                     Return to App
                 </a>
             </body>
