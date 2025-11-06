@@ -5,7 +5,9 @@ import jwt, { Token } from '@utils/jwt'
 export const authenticate: RequestHandler = async (req, res, next) => {
     const token: string = req.cookies['access_token'] ?? req.headers['authorization']?.replace('Bearer ', '')
 
-    if (!token) res.respond(Response.unauthorized({ message: 'No valid session found. Please login again.' }))
+    if (!token) {
+        return res.respond(Response.unauthorized({ message: 'No valid session found. Please login again.' }))
+    }
 
     const decoded = jwt.verifyToken<Token>(token)
 
