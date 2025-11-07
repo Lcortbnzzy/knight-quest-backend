@@ -1,9 +1,8 @@
 import { getSave, updateSave, resetSave } from '@controllers/save'
-import middlewares from '@middlewares'
+import { authenticate } from '@middlewares/authenticate'
+import { RequestHandler } from 'express'
 
-// ✅ IMPORTANT: Add authentication middleware
-export const middleware = [middlewares.authenticate]
-
-export const get = getSave
-export const put = updateSave
-export const del = resetSave
+// ✅ Wrap handlers with authenticate middleware
+export const get: RequestHandler[] = [authenticate, getSave]
+export const put: RequestHandler[] = [authenticate, updateSave]
+export const del: RequestHandler[] = [authenticate, resetSave]
