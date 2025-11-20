@@ -7,19 +7,18 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import * as http from 'node:http';
 import morgan from 'morgan';
-import { logger } from '@utils/logging'; // <- your logger
+import { logger } from '@utils/logging';
 
 export const createServer = async () => {
     const app = express();
     const server = http.createServer(app);
 
     // ----- Morgan setup -----
-    // Forward morgan logs to your logger
     app.use(
         morgan('dev', {
             stream: {
                 write: (message: string) => {
-                    logger.info(message.trim()); // trim to remove extra newline
+                    logger.info(message.trim());
                 },
             },
         })
@@ -29,7 +28,10 @@ export const createServer = async () => {
     app.use(middlewares.responseMiddleware);
     app.use(middlewares.requestMiddleware);
 
-    app.use(express.json());
+    // ✅ INCREASED PAYLOAD LIMIT for PDF conversion
+    app.use(express.json({ limit: '50mb' }));
+    app.use(express.urlencoded({ limit: '50mb', extended: true }));
+    
     app.use(cookieParser());
     app.use(cors());
 

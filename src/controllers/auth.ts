@@ -33,7 +33,8 @@ export const login: RequestHandler = validateRequestBody(LoginSchema, async (req
             username: user.username,
             token,
             firstName: user.firstName,
-            lastName: user.lastName
+            lastName: user.lastName,
+            role: user.role 
         }
     })
 })
@@ -117,7 +118,8 @@ export const register: RequestHandler = validateRequestBody(RegisterSchema, asyn
             username: user.username,
             firstName: user.firstName,
             lastName: user.lastName,
-            token
+            token,
+            role: user.role
         }
     })
 })

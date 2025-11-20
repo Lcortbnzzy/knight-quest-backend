@@ -21,11 +21,14 @@ model User {
   updatedAt DateTime @updatedAt
 
   // Relations with distinct names
-  save      Save?
-  asTeacher TeacherStudent[] @relation("TeacherStudents_teacher")
-  asStudent TeacherStudent[] @relation("TeacherStudents_student")
-  asParent  ParentChild[]    @relation("ParentChild_parent")
-  asChild   ParentChild[]    @relation("ParentChild_child")
+  save              Save?
+  asTeacher         TeacherStudent[]    @relation("TeacherStudents_teacher")
+  asStudent         TeacherStudent[]    @relation("TeacherStudents_student")
+  asParent          ParentChild[]       @relation("ParentChild_parent")
+  asChild           ParentChild[]       @relation("ParentChild_child")
+  certificates      Certificate[]       @relation("UserCertificates")
+  createdModules    Module[]            @relation("TeacherModules")
+  moduleAssignments ModuleAssignment[]  @relation("StudentAssignments")
 
   @@map("users")
 }
@@ -79,6 +82,79 @@ model AuthPin {
 
   @@index([expiresAt], map: "idx_auth_pins_expires_at")
   @@map("auth_pins")
+}
+
+// ✨ NEW: Certificate Model
+model Certificate {
+  id                String   @id @default(cuid())
+  certificateNumber String   @unique @map("certificate_number")
+  studentId         Int      @map("student_id")
+  gradeLevel        String   @map("grade_level")
+  achievement       String
+  issuedBy          String   @map("issued_by")
+  pdfUrl            String?  @map("pdf_url")
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+
+  student User @relation("UserCertificates", fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@index([studentId])
+  @@index([certificateNumber])
+  @@map("certificates")
+}
+
+// ✨ NEW: Module Model
+model Module {
+  id          Int        @id @default(autoincrement())
+  name        String
+  grade       Int
+  subject     String
+  teacherId   Int        @map("teacher_id")
+  createdAt   DateTime   @default(now()) @map("created_at")
+  updatedAt   DateTime   @updatedAt @map("updated_at")
+
+  teacher     User                @relation("TeacherModules", fields: [teacherId], references: [id], onDelete: Cascade)
+  questions   ModuleQuestion[]
+  assignments ModuleAssignment[]
+
+  @@index([teacherId])
+  @@index([grade])
+  @@map("modules")
+}
+
+// ✨ NEW: Module Question Model
+model ModuleQuestion {
+  id                 Int      @id @default(autoincrement())
+  moduleId           Int      @map("module_id")
+  questionText       String   @map("question_text") @db.Text
+  answers            Json     // Array of 4 answers
+  correctAnswerIndex Int      @map("correct_answer_index")
+  correctAnswer      String   @map("correct_answer")
+  createdAt          DateTime @default(now()) @map("created_at")
+
+  module Module @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+
+  @@index([moduleId])
+  @@map("module_questions")
+}
+
+// ✨ NEW: Module Assignment Model
+model ModuleAssignment {
+  id        Int      @id @default(autoincrement())
+  moduleId  Int      @map("module_id")
+  studentId Int      @map("student_id")
+  completed Boolean  @default(false)
+  score     Int?
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  module  Module @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  student User   @relation("StudentAssignments", fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@unique([moduleId, studentId])
+  @@index([studentId])
+  @@index([moduleId])
+  @@map("module_assignments")
 }
 
 enum Role {

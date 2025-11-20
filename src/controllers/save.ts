@@ -7,7 +7,6 @@ import { SaveSchema } from '@schemas/save'
 export const getSave: RequestHandler = async (req, res) => {
     const { user } = req
     
-    // Check if user is authenticated
     if (!user || !user.id) {
         return res.unauthorized({ message: 'Authentication required' })
     }
@@ -17,8 +16,8 @@ export const getSave: RequestHandler = async (req, res) => {
         omit: { userId: true }
     })
 
-    console.log('🔍 GET /save - User:', user.id)
-    console.log('📦 Save data retrieved:', save ? 'Found' : 'Not found')
+    console.log('📍 GET /save - User:', user.id)
+    console.log('📦 Save data:', JSON.stringify(save?.data, null, 2))  // ← ADD THIS
 
     res.ok({
         message: 'Save data retrieved successfully.',
