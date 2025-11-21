@@ -10,28 +10,24 @@ export const post = [
     let finalStudentIds: number[] = []
     
     if (assignToAll) {
-      // ✅ Assign to ALL students linked to this teacher
-      const teacherStudents = await prisma.teacherStudent.findMany({
+      // ✅ FIXED: Get ALL students (remove teacher filter temporarily)
+      const allStudents = await prisma.user.findMany({
         where: { 
-          teacherId: req.user.id
+          role: 'Student'
         },
-        include: {
-          student: {
-            select: { id: true }
-          }
-        }
+        select: { id: true }
       })
       
-      finalStudentIds = teacherStudents.map(ts => ts.student.id)
+      finalStudentIds = allStudents.map(student => student.id)
       
       if (finalStudentIds.length === 0) {
         return res.status(400).json({ 
           success: false, 
-          message: `No students found for your class` 
+          message: 'No students found in the system' 
         })
       }
     } else {
-      // ✅ FIXED: Assign ONLY to the specific student IDs provided
+      // ✅ Assign ONLY to the specific student IDs provided
       // Convert username format (#123456789) to user IDs
       const students = await prisma.user.findMany({
         where: { 
